@@ -1,20 +1,19 @@
-import Image from '@models/Image'
+import { IImage } from '@interfaces/IImage'
 
-export function renderImage (image: Image) : Image {
-  const { id, name, type, filename, size, url, createdAt, updatedAt } = image
+export function renderImage (image: IImage) : IImage {
+  const { _id, name, type, filename, size, url, createdAt } = image
 
   return {
-    id,
+    id: _id,
     name,
     type,
     filename,
     size,
     url,
-    createdAt,
-    updatedAt
-  } as Image
+    createdAt
+  } as IImage
 }
 
-export function renderListImage (image: Image[]) : Image[] {
+export function renderListImage (image: IImage[]) : IImage[] {
   return image.map(image => renderImage(image))
 }

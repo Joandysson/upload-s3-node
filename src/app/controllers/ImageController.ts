@@ -22,7 +22,7 @@ class ImageController {
       filename,
       size,
       url
-    }).save()
+    })
 
     return response.status(201).json(renderImage(image))
   }
@@ -30,7 +30,7 @@ class ImageController {
   async delete (request: Request, response: Response) {
     const { id } = request.params
 
-    const image = await Image.findOne(id)
+    const image = await Image.findById(id)
 
     if (!image) return response.status(404).json('image not found')
 

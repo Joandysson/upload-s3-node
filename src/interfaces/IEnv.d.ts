@@ -21,7 +21,10 @@ export interface Env {
 
     // Config MULTER
     STORAGE_TYPE: 'local' | 's3',
+    // S3
     BUCKET_NAME: string,
+    // MONGO
+    MONGO_URL: string,
     // Other
     [key: string]: string | undefined
 }
