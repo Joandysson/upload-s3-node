@@ -47,13 +47,15 @@ $ yarn dev
 
 ## API
 
+-  Foi utilizado um prefixo `api/v1` para todas as rotas
+
 |Métodos| Parâmetros | Descrição |
 |---|---|---|
-|`GET`| `uploads` | Retorna um JSON com todos os Uploads realizados. |
-|`POST`| `upload` | Efetua o upload de uma imagem. |
-|`DELETE`| `upload/{id}` | Deleta a imagem baseado no `ID` informado. |
+|`GET`| `image/uploads` | Retorna um JSON com todos os Uploads realizados. |
+|`POST`| `image/upload` | Efetua o upload de uma imagem. |
+|`DELETE`| `image/upload/{id}` | Deleta a imagem baseado no `ID` informado. |
 
-### Todos os Uploads [GET][/uploads]
+### Todos os Uploads [GET][/image/uploads]
 + Response 200 (application/json)
   Todos as Imagens
 
@@ -87,7 +89,7 @@ $ yarn dev
             []
 
 
-### Cadastrar imagem [POST][/upload]
+### Cadastrar imagem [POST][/image/upload]
 + Response 201 (form-data)
   Cadastrar uma imagem
 
@@ -114,7 +116,7 @@ $ yarn dev
                 "createdAt": "2021-03-29T12:13:34.821Z"
             }
 
-### Deletar imagem [DELETE][/upload/{ID}]
+### Deletar imagem [DELETE][/image/upload/{ID}]
 + Response 200 (application/json)
   Deletar uma imagem
     + Body
@@ -126,8 +128,5 @@ $ yarn dev
     + Body
 
             "image not found"
-
-
-
 
 > By Joandysson Gama
