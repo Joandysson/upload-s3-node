@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "45210fdf-5093-4eaa-8ab1-d9ce42a8425a",
+		"name": "Upload Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/image/uploads",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"uploads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/joand/Downloads/wp4676574-4k-pc-wallpapers.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/image/upload",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Response success (Local)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/joand/Downloads/Untitled.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/image/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"upload"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "221"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dd-ZUEgzFbT6lqtxvPNA0bk7Xbq/zc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Mar 2021 12:11:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6061c3ec2fe4032680d6064f\",\n    \"name\": \"Untitled.png\",\n    \"type\": \"\",\n    \"filename\": \"1617019884120-Untitled.png\",\n    \"size\": 192142,\n    \"url\": \"http://localhost:3333/files/1617019884120-Untitled.png\",\n    \"createdAt\": \"2021-03-29T12:11:24.137Z\"\n}"
+				},
+				{
+					"name": "Response success (s3)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/joand/Downloads/wp4676574-4k-pc-wallpapers.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/image/upload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"upload"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "343"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"157-XJaIvhFzp8BxCw/pPfFLNHpvUKA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Mar 2021 12:13:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6061c46ef5f72a29dc026b61\",\n    \"name\": \"wp4676574-4k-pc-wallpapers.jpg\",\n    \"type\": \"Paisagem\",\n    \"filename\": \"1d38b378b039014294819b2dec0c620c-wp4676574-4k-pc-wallpapers.jpg\",\n    \"size\": 1704772,\n    \"url\": \"https://upload-node-application.s3.amazonaws.com/1d38b378b039014294819b2dec0c620c-wp4676574-4k-pc-wallpapers.jpg\",\n    \"createdAt\": \"2021-03-29T12:13:34.821Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/image/upload/6061c41d2fe4032680d60650",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"upload",
+						"6061c41d2fe4032680d60650"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Response error 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/image/upload/6061c41d2fe4032680d60650",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"upload",
+								"6061c41d2fe4032680d60650"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11-NBIt81dr8mXRZjAt2rbuxczOAWA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Mar 2021 12:47:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"image not found\""
+				},
+				{
+					"name": "Response success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/image/upload/6061c41d2fe4032680d60650",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"upload",
+								"6061c41d2fe4032680d60650"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Mar 2021 12:19:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}
