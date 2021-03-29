@@ -18,7 +18,7 @@ const local = multer.diskStorage({
     cb(null, path.resolve(__dirname, '..', 'tmp', 'uploads'))
   },
   filename: (_, file:File, cb) => {
-    file.key = `${Date.now()}-${file.originalname}`
+    file.key = `${Date.now()}-${file.originalname.replaceAll(' ', '')}`
 
     cb(null, file.key)
   }
